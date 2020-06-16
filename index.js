@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 
 app.get('/', (req, res)=>{
-    res.send("hello world")
+    res.send("<h1>Welcome to Todo's app</h1>")
 })
 
 
