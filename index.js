@@ -4,7 +4,10 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 require('dotenv/config')
 
+const todosRoute = require('./routes/todos')
+
 app.use(bodyParser.json())
+app.use('/todos', todosRoute)
 
 app.get('/', (req, res)=>{
     res.send("<h1>Welcome to Todo's app</h1>")

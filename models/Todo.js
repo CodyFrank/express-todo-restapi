@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
-const todoSchema = mongoose.schema({
+const todoSchema = mongoose.Schema({
     title: {
-        type: string,
+        type: String,
         required: true
     },
     description: {
@@ -10,7 +10,7 @@ const todoSchema = mongoose.schema({
         required: true
     },
     date: {
-        type: date,
+        type: Date,
         default: Date.now
     }
 })
