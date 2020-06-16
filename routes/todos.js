@@ -25,4 +25,24 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.get('/:id', async (req, res) => {
+    const todo = await Todo.findById(req.params.id)
+    try{
+        res.json(todo)
+    }catch(err){
+        res.json({message: err})
+    }
+})
+
+router.delete('/:id', async (req, res) => {
+    const todo = await Todo.deleteOne({_id: req.params.id})
+    const todos = await Todo.find()
+    try {
+        res.json(todos)
+    }catch(err){
+        res.json({ message: err })
+    }
+})
+
+
 module.exports = router
